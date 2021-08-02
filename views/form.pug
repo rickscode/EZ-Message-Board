@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h2 New Message
+    form(method='POST' action='/new')
+        input.form-control(type='text', placeholder='Username' name='user' required='true' class='my-2')
+        br
+        br
+        input.form-control(type='text', placeholder='Message' name='message' required='true' class='my-2')
+        br
+        br
+        button.btn.btn-primary(type='submit') Submit
