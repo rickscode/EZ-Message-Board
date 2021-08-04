@@ -20,8 +20,18 @@ router.get('/', (req, res, next) => {
 });
 
 /* Get form page */
-router.get('/form', (req, res, next) => {
+router.get('/new', (req, res, next) => {
   res.render('form')
+});
+
+/* Post message to index */
+router.post('/new', (req, res, next) => {
+  body = req.body;
+  messages.unshift(
+    {
+      text: body.message, user: body.user, added: new Date()
+    });
+    res.redirect('/');
 });
 
 module.exports = router;

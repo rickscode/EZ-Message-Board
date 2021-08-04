@@ -3,6 +3,10 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+    <br>
+    <br>
+    form(action='/new')
+      button.btn.btn-primary(type='submit') write message
 
     each message in messages
       h2= message.text
